@@ -53,8 +53,6 @@ public class checkPasswordClass {
 
             }
 
-
-
             if ((currentvalue == '(') || (currentvalue == ')') || (currentvalue == '#') || (currentvalue == '$') || (currentvalue == '?') || (currentvalue == '!') || (currentvalue == '%') || (currentvalue == '/') || (currentvalue == '@')) {
                 checkPasswordBoolArray[4] = true;
             }
@@ -80,6 +78,11 @@ public class checkPasswordClass {
         return  bool_value;
     }
 
+    public static void main(String[] args) {
+        boolean RU = false;
+        RU = checkPassword("Passwort0815!");
+        System.out.println(RU);
+    }
 
 
 }
