@@ -12,6 +12,7 @@ public class checkPasswordAssertion {
     @BeforeEach
     void setUp() {}
 
+    //Repository Link for Grading: https://github.com/offarmin976/prog2-ss21-exercise1.git
 
     @Test
     void testmycheckPassword_Scenario1(){
