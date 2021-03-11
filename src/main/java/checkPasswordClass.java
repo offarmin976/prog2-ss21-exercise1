@@ -31,9 +31,16 @@ public class checkPasswordClass {
                     break;
                 }
             }
+
+
             for(int q = 0; q < Query.length(); q++) {
                 if (Character.isDigit(Query.charAt(q)) == true) {
                     checkPasswordBoolArray[3] = true;
+
+                    // IMPLEMENTATION FOR ON-GOING NUMBERS EXTEND
+
+                    // Unfinished Idea
+
                     /*
                     System.out.printf("" + Query.charAt(i));
 
@@ -49,6 +56,8 @@ public class checkPasswordClass {
                     break;
 
                      */
+
+
                 }
 
             }
@@ -76,12 +85,6 @@ public class checkPasswordClass {
             bool_value = true;
         }
         return  bool_value;
-    }
-
-    public static void main(String[] args) {
-        boolean RU = false;
-        RU = checkPassword("Passwort0815!");
-        System.out.println(RU);
     }
 
 

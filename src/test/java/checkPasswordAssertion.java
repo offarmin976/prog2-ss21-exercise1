@@ -88,13 +88,21 @@ public class checkPasswordAssertion {
     @Test
     void testmycheckPassword_Scenario10(){
         checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("abcDefg1%");    //Tesstbeispiel für Rule4: Sonderzeichen
+        Boolean expected = true;                                   //Test: True weil % Sonderzeichen
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testmycheckPassword_Scenario11(){
+        checkPasswordClass cPC = new checkPasswordClass();
         Boolean actual = cPC.checkPassword("abcDefg1#");    //Tesstbeispiel für Rule4: Sonderzeichen
         Boolean expected = true;                                   //Test: True weil # Sonderzeichen
         assertEquals(expected, actual);
     }
 
     @Test
-    void testmycheckPassword_Scenario11(){
+    void testmycheckPassword_Scenario12(){
         checkPasswordClass cPC = new checkPasswordClass();
         Boolean actual = cPC.checkPassword("abcDefg1(");    //Tesstbeispiel für Rule4: Sonderzeichen
         Boolean expected = true;                                   //Test: True weil ( Sonderzeichen
@@ -102,7 +110,7 @@ public class checkPasswordAssertion {
     }
 
     @Test
-    void testmycheckPassword_Scenario12(){
+    void testmycheckPassword_Scenario13(){
         checkPasswordClass cPC = new checkPasswordClass();
         Boolean actual = cPC.checkPassword("abcDefg1)");    //Tesstbeispiel für Rule4: Sonderzeichen
         Boolean expected = true;                                   //Test: True weil ) Sonderzeichen
@@ -110,12 +118,107 @@ public class checkPasswordAssertion {
     }
 
     @Test
-    void testmycheckPassword_Scenario13(){
+    void testmycheckPassword_Scenario14(){
         checkPasswordClass cPC = new checkPasswordClass();
         Boolean actual = cPC.checkPassword("abcDefg1?");    //Tesstbeispiel für Rule4: Sonderzeichen
-        Boolean expected = false;                                   //Test: True weil ? Sonderzeichen
+        Boolean expected = true;                                   //Test: True weil ? Sonderzeichen
         assertEquals(expected, actual);
     }
+
+    @Test
+    void testmycheckPassword_Scenario15(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("66446466?");    //Tesstbeispiel für Rule4: Sonderzeichen
+        Boolean expected = false;                                   //Test: False weil garkeine Buchstaben
+        assertEquals(expected, actual);
+    }
+    @Test
+    void testmycheckPassword_Scenario16(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword(" ");    //Tesstbeispiel für Rule4: Sonderzeichen
+        Boolean expected = false;                                  //Test: False weil leeren String
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testmycheckPassword_Scenario17(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("PAsswort13'");    //Tesstbeispiel für Rule4: Sonderzeichen
+        Boolean expected = false;                                   //Test: False weil unerlaubtes Sonderzeichen
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testmycheckPassword_Scenario18(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("AAAAAAA2'");    //Tesstbeispiel für Rule4: Sonderzeichen
+        Boolean expected = false;                                   //Test: False weil unerlaubtes Sonderzeichen ohne Kleinbuchstaben
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testmycheckPassword_Scenario19(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("aaaaaa2'");    //Tesstbeispiel für Rule4: Sonderzeichen
+        Boolean expected = false;                                   //Test: False weil unerlaubtes Sonderzeichen ohne Großbuchstaben
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testmycheckPassword_Scenario20(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("AAAAaa2'");    //Tesstbeispiel für Rule4: Sonderzeichen
+        Boolean expected = false;                                   //Test: False weil unerlaubtes Sonderzeichen ohne Zahl
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testmycheckPassword_Scenario21(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("!Prometheus2018!!");    //Tesstbeispiel für alle Regeln
+        Boolean expected = true;                                          //Test: True weil Passwort passt
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testmycheckPassword_Scenario22(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("FirstStart123!");      //Tesstbeispiel für alle Regeln
+        Boolean expected = true;                                          //Test: True weil Passwort passt
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testmycheckPassword_Scenario23(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("!Prometheus2018!!");    //Tesstbeispiel für alle Regeln
+        Boolean expected = true;                                          //Test: True weil Passwort passt
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testmycheckPassword_Scenario24(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("!GetBachelor!2023!");    //Tesstbeispiel für alle Regeln
+        Boolean expected = true;                                          //Test: True weil Passwort passt
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testmycheckPassword_Scenario25(){
+        checkPasswordClass cPC = new checkPasswordClass();
+        Boolean actual = cPC.checkPassword("HowMuchIsTheFish%%2412081");    //Tesstbeispiel für alle Regeln
+        Boolean expected = true;                                          //Test: True weil Passwort passt
+        assertEquals(expected, actual);
+    }
+
+
+
+
+
+
+
+
 
 
 
